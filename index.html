@@ -7,26 +7,37 @@
 </head>
 <body>
 
-<div class="container">
-  <h1 id="mainText">কি লাইন মামা...</h1>
-  <button id="startBtn">Click Here to Read Message</button>
-
-  <div id="firstMessage" class="hidden">
-    <p>এইভাবে চলে গেলো?</p>
-  </div>
-
-  <div id="goldenText" class="hidden">
-    <p>ভালোবাসা? কানে ধরছি, আর না।</p>
-    <p>কষ্ট আমি পাইসি, তুমি না।</p>
-  </div>
-
-  <div id="ibtidaMessage" class="hidden">
-    <p>Mama ভুলটা তোরই ছিল। 😔</p>
-    <a href="sadaf.html" class="sadafBtn">Click for SADAF</a>
+<div id="page1" class="page">
+  <div class="container">
+    <h1>কি লাইন মামা...</h1>
+    <button id="startBtn">Click Here to Read Message</button>
+    <div id="firstMessage" class="hidden box">
+      <p>এইভাবে চলে গেলো?</p>
+    </div>
   </div>
 </div>
 
-<canvas id="particles"></canvas>
+<div id="page2" class="page hidden">
+  <div class="container box">
+    <h2>ভালোবাসা? কানে ধরছি, আর না।</h2>
+    <h2>কষ্ট আমি পাইসি, তুমি না।</h2>
+  </div>
+  <canvas id="particles"></canvas>
+</div>
+
+<div id="ibtidaPage" class="page hidden">
+  <div class="container box">
+    <h1>Mama ভুলটা তোরই ছিল। 😔</h1>
+    <button id="sadafBtn">Click for SADAF</button>
+  </div>
+</div>
+
+<div id="sadafPage" class="page hidden">
+  <div class="container box">
+    <h1>GOOD NIGHT LAZIM 🙂🌙</h1>
+    <img src="https://i.imgflip.com/92aiq8.jpg?a490608" width="300">
+  </div>
+</div>
 
 <script src="effects.js"></script>
 </body>
