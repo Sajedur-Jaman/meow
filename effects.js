@@ -1,37 +1,3 @@
-const startBtn = document.getElementById("startBtn");
-const firstMsg = document.getElementById("firstMessage");
-
-const page1 = document.getElementById("page1");
-const page2 = document.getElementById("page2");
-const ibtidaPage = document.getElementById("ibtidaPage");
-const sadafPage = document.getElementById("sadafPage");
-const sadafBtn = document.getElementById("sadafBtn");
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-startBtn.addEventListener("click", () => {
-  firstMsg.classList.remove("hidden");
-  setTimeout(() => {
-    page1.classList.add("hidden");
-    page2.classList.remove("hidden");
-    startGoldenParticles(15000);
-    // auto go to ibtidaPage after particles
-    setTimeout(() => {
-      page2.classList.add("hidden");
-      ibtidaPage.classList.remove("hidden");
-    }, 15000);
-  }, 1000);
-});
-
-sadafBtn.addEventListener("click", () => {
-  ibtidaPage.classList.add("hidden");
-  sadafPage.classList.remove("hidden");
-});
-
-// Golden particle animation
 function startGoldenParticles(duration){
   let particles = [];
   for(let i=0;i<200;i++){
@@ -50,7 +16,7 @@ function startGoldenParticles(duration){
     particles.forEach(p=>{
       ctx.fillStyle = p.color;
       ctx.beginPath();
-      ctx.arc(p.x,p.y,3,0,Math.PI*2);
+      ctx.arc(p.x,p.y,4,0,Math.PI*2);
       ctx.fill();
       p.x += p.vx;
       p.y += p.vy;
@@ -65,3 +31,5 @@ function startGoldenParticles(duration){
   }
   animate();
 }
+
+// Use 15000ms for 15 second duration
