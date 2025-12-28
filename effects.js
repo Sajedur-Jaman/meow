@@ -1,42 +1,40 @@
 const startBtn = document.getElementById("startBtn");
 const firstMsg = document.getElementById("firstMessage");
-const goldenText = document.getElementById("goldenText");
-const ibtidaMessage = document.getElementById("ibtidaMessage");
 
-startBtn.addEventListener("click", () => {
-  firstMsg.classList.remove("hidden");
-  // scroll detect for golden particle
-  window.addEventListener("scroll", showGoldenParticleOnce);
-});
-
-let goldenShown = false;
-
-function showGoldenParticleOnce() {
-  if (goldenShown) return;
-  goldenShown = true;
-  goldenText.classList.remove("hidden");
-  startGoldenParticles(5000); // 5 second particle
-  // detect further scroll for ibtida
-  window.addEventListener("scroll", showIbtidaOnce);
-}
-
-let ibtidaShown = false;
-
-function showIbtidaOnce() {
-  if (ibtidaShown) return;
-  ibtidaShown = true;
-  ibtidaMessage.classList.remove("hidden");
-}
-
-// Particle setup
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const ibtidaPage = document.getElementById("ibtidaPage");
+const sadafPage = document.getElementById("sadafPage");
+const sadafBtn = document.getElementById("sadafBtn");
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-function startGoldenParticles(duration) {
+startBtn.addEventListener("click", () => {
+  firstMsg.classList.remove("hidden");
+  setTimeout(() => {
+    page1.classList.add("hidden");
+    page2.classList.remove("hidden");
+    startGoldenParticles(15000);
+    // auto go to ibtidaPage after particles
+    setTimeout(() => {
+      page2.classList.add("hidden");
+      ibtidaPage.classList.remove("hidden");
+    }, 15000);
+  }, 1000);
+});
+
+sadafBtn.addEventListener("click", () => {
+  ibtidaPage.classList.add("hidden");
+  sadafPage.classList.remove("hidden");
+});
+
+// Golden particle animation
+function startGoldenParticles(duration){
   let particles = [];
-  for(let i=0;i<150;i++){
+  for(let i=0;i<200;i++){
     particles.push({
       x: Math.random()*canvas.width,
       y: canvas.height,
@@ -46,9 +44,7 @@ function startGoldenParticles(duration) {
       color: `hsl(${Math.random()*60 + 40},100%,50%)`
     });
   }
-
   const startTime = Date.now();
-
   function animate() {
     ctx.clearRect(0,0,canvas.width,canvas.height);
     particles.forEach(p=>{
@@ -61,13 +57,11 @@ function startGoldenParticles(duration) {
       p.life--;
     });
     particles = particles.filter(p=>p.life>0);
-
     if(Date.now()-startTime < duration){
       requestAnimationFrame(animate);
     } else {
       ctx.clearRect(0,0,canvas.width,canvas.height);
     }
   }
-
   animate();
 }
