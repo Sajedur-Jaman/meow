@@ -4,6 +4,7 @@ body, html {
   background: #111;
   color: gold;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 .page {
@@ -19,13 +20,19 @@ body, html {
 
 .container {
   text-align: center;
+  z-index: 10; /* particle এর উপরে থাকবে */
 }
 
 .box {
-  background: rgba(0,0,0,0.7);
-  padding: 30px;
-  border-radius: 15px;
+  background: rgba(0,0,0,0.85); /* বেশি opacity */
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
+  color: gold;
+  font-weight: bold;
+  font-size: 1.8em;
+  box-shadow: 0 0 20px gold;
+  position: relative;
 }
 
 button {
@@ -35,7 +42,8 @@ button {
   color: gold;
   border: 2px solid gold;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  margin-top: 20px;
 }
 
 button:hover {
@@ -45,6 +53,7 @@ button:hover {
 
 h1,h2 { 
   font-weight: bold; 
-  text-shadow: 0 0 5px #fff, 0 0 10px gold;
+  color: #FFD700; /* golden */
+  text-shadow: 0 0 5px #fff, 0 0 10px gold; 
   margin: 10px 0;
 }
