@@ -37,7 +37,6 @@
     border-radius: 20px;
     text-align: center;
     font-size: 2.5em;
-    font-weight: normal;
     max-width: 700px;
     margin-bottom: 30px;
   }
@@ -68,12 +67,12 @@
 <canvas id="particles"></canvas>
 
 <div class="page">
-  <div class="box">
+  <div class="box" id="box">
     <p id="line1">কি line mama...</p>
     <button id="btn1">Click Here</button>
 
     <p id="msg1" class="hidden">এইভাবে চলে গেলো মামা?</p>
-    <p id="msg2" class="hidden">ভালোবাসা? কানে ধরছি, আর না।</p>
+    <p id="msg2" class="hidden">ভালোবাসা? কানে ধরছি, আর না।<br>কষ্ট আমি পেয়েছি তুমি না।</p>
 
     <button id="btn2" class="hidden">Click for SADAF</button>
     <img id="sadafImg" class="popup-image hidden" src="https://i.imgflip.com/92aiq8.jpg?a490608" alt="SADAF">
@@ -128,10 +127,11 @@ function animateParticles(particles, duration){
 
 // Step 1: First click
 document.getElementById("btn1").addEventListener("click", ()=>{
+  document.getElementById("line1").classList.add("hidden");
   document.getElementById("msg1").classList.remove("hidden");
 
-  // Show second message + particles after 1 sec
   setTimeout(()=>{
+    document.getElementById("msg1").classList.add("hidden");
     document.getElementById("msg2").classList.remove("hidden");
     let particles = createParticles(300);
     animateParticles(particles, 15000); // 15 sec
@@ -143,6 +143,7 @@ document.getElementById("btn1").addEventListener("click", ()=>{
 
 // Step 2: SADAF click
 document.getElementById("btn2").addEventListener("click", ()=>{
+  document.getElementById("msg2").classList.add("hidden");
   document.getElementById("sadafImg").classList.remove("hidden");
   alert("GOOD NIGHT LAZIM 🙂🌙");
 });
