@@ -36,8 +36,8 @@
     border-radius: 20px;
     text-align: center;
     color: white;
-    font-size: 2.5em; /* text বড় */
-    box-shadow: 0 0 20px #fff;
+    font-size: 2.5em;
+    font-weight: normal; /* bold নয় */
   }
   button {
     padding: 15px 25px;
@@ -54,6 +54,11 @@
     transition: 0.3s;
   }
   .hidden { display: none; }
+  img.popup-image {
+    max-width: 300px;
+    margin-top: 20px;
+    border-radius: 15px;
+  }
 </style>
 </head>
 <body>
@@ -65,6 +70,8 @@
     <p id="line1">কি line mama...</p>
     <button id="startBtn">Click to Read Message</button>
     <p id="message" class="hidden">এইভাবে চলে গেলো?</p>
+    <button id="sadafBtn" class="hidden">Click for SADAF</button>
+    <img id="sadafImage" class="popup-image hidden" src="https://i.imgflip.com/92aiq8.jpg?a490608" alt="SADAF">
   </div>
 </div>
 
@@ -114,8 +121,14 @@ function animateParticles(particles, duration){
 
 document.getElementById("startBtn").addEventListener("click",()=>{
   document.getElementById("message").classList.remove("hidden");
+  document.getElementById("sadafBtn").classList.remove("hidden");
   let particles = createParticles(200);
   animateParticles(particles, 15000); // 15 sec
+});
+
+document.getElementById("sadafBtn").addEventListener("click",()=>{
+  document.getElementById("sadafImage").classList.remove("hidden");
+  alert("GOOD NIGHT LAZIM 🙂🌙");
 });
 </script>
 
