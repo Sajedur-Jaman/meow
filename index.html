@@ -36,7 +36,7 @@
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: normal;
     max-width: 700px;
     margin-bottom: 30px;
@@ -93,10 +93,11 @@ function createParticles(count){
     arr.push({
       x: Math.random()*canvas.width,
       y: canvas.height + Math.random()*50,
-      vx: (Math.random()-0.5)*2,
-      vy: Math.random()*-5-2,
+      vx: (Math.random()-0.5)*4,
+      vy: Math.random()*-6-3,
       life: 100,
-      color: 'gold'
+      color: 'gold',
+      size: Math.random()*3 + 2
     });
   }
   return arr;
@@ -109,7 +110,7 @@ function animateParticles(particles, duration){
     particles.forEach(p=>{
       ctx.fillStyle = p.color;
       ctx.beginPath();
-      ctx.arc(p.x,p.y,4,0,Math.PI*2);
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
       ctx.fill();
       p.x += p.vx;
       p.y += p.vy;
@@ -129,10 +130,10 @@ function animateParticles(particles, duration){
 document.getElementById("btn1").addEventListener("click", ()=>{
   document.getElementById("msg1").classList.remove("hidden");
 
-  // Wait 1 sec then show second message + start particle
+  // Show second message + particles after 1 sec
   setTimeout(()=>{
     document.getElementById("msg2").classList.remove("hidden");
-    let particles = createParticles(250);
+    let particles = createParticles(300);
     animateParticles(particles, 15000); // 15 sec
     document.getElementById("btn2").classList.remove("hidden");
   }, 1000);
