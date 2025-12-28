@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  background: radial-gradient(#000, #111);
+  color: #f5c97a;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+  margin-top: 15vh;
+}
+
+button {
+  padding: 12px 20px;
+  background: black;
+  color: gold;
+  border: 1px solid gold;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.links a {
+  display: block;
+  margin-top: 15px;
+  color: gold;
+  text-decoration: none;
+}
