@@ -8,18 +8,21 @@
 <body>
 
 <div class="container">
-  <h1>কি লাইন মামা...</h1>
-  <button onclick="startAnimation()">Click Here to Read Message</button>
+  <h1 id="mainText">কি লাইন মামা...</h1>
+  <button id="startBtn">Click Here to Read Message</button>
 
-  <div id="messageBox" class="hidden">
+  <div id="firstMessage" class="hidden">
     <p>এইভাবে চলে গেলো?</p>
-    <p class="hover-text" data-hover="এই বার্তা হোভার করলে দেখা যাবে">ভালোবাসা? কানে ধরছি, আর না।</p>
-    <p>কষ্ট আমি পাইসি, তুমি না।</p>
+  </div>
 
-    <div class="options">
-      <a href="sadaf.html">Click for SADAF</a>
-      <a href="ibtida.html">Click for IBTIDA</a>
-    </div>
+  <div id="goldenText" class="hidden">
+    <p>ভালোবাসা? কানে ধরছি, আর না।</p>
+    <p>কষ্ট আমি পাইসি, তুমি না।</p>
+  </div>
+
+  <div id="ibtidaMessage" class="hidden">
+    <p>Mama ভুলটা তোরই ছিল। 😔</p>
+    <a href="sadaf.html" class="sadafBtn">Click for SADAF</a>
   </div>
 </div>
 
