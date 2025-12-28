@@ -1,9 +1,9 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
   background: radial-gradient(#111, #000);
   color: #f5c97a;
+  overflow-x: hidden;
 }
 
 .container {
@@ -11,7 +11,7 @@ body {
   padding-top: 15vh;
 }
 
-button {
+button, .sadafBtn {
   padding: 12px 20px;
   border-radius: 25px;
   background: black;
@@ -19,9 +19,10 @@ button {
   border: 2px solid gold;
   cursor: pointer;
   font-size: 16px;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, .sadafBtn:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -31,19 +32,8 @@ button:hover {
   margin-top: 20px;
 }
 
-.options a {
-  display: block;
-  margin-top: 15px;
+#goldenText p {
+  font-size: 20px;
+  margin: 5px 0;
   color: gold;
-  text-decoration: none;
-  font-size: 16px;
 }
-
-.hover-text[data-hover]:hover::after {
-  content: attr(data-hover);
-  display: block;
-  color: #fff;
-  margin-top: 5px;
-  font-size: 14px;
-}
-
